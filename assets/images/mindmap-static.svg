@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 298" role="img" aria-labelledby="title desc">
+  <title id="title">個人網站心智圖</title>
+  <desc id="desc">個人網頁連接專案與探索測試的簡易心智圖。</desc>
+  <rect width="760" height="298" fill="#2e2e2e"/>
+  <line x1="291" y1="82" x2="291" y2="165" stroke="#6f6f6f" stroke-width="1"/>
+  <line x1="346" y1="82" x2="536" y2="82" stroke="#6f6f6f" stroke-width="1"/>
+  <g font-family="Arial, 'Noto Sans TC', sans-serif" font-size="13" fill="#dddddd" text-anchor="middle">
+    <rect x="236" y="62" width="110" height="40" rx="8" fill="#3a3a3a" stroke="#777777"/>
+    <text x="291" y="87">個人網頁</text>
+    <rect x="236" y="165" width="110" height="40" rx="8" fill="#51453c" stroke="#777777"/>
+    <text x="291" y="190">專案</text>
+    <rect x="536" y="62" width="110" height="40" rx="8" fill="#3a3a3a" stroke="#777777"/>
+    <text x="591" y="87">探索測試</text>
+  </g>
+</svg>

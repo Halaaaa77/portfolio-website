@@ -1,0 +1,1271 @@
+:root {
+  --content-wide: 1600px;
+  --page-pad:48px;
+  --ink: #4c4848;
+  --muted: #9b9696;
+  --rose: #d8cfcf;
+  --rose-dark: #cec4c4;
+  --rose-soft: #f1e8e8;
+  --line: #cfc5c5;
+  --dark: #2e2e2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: #fff;
+  color: var(--ink);
+  font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.view {
+  opacity: 1;
+
+  transition: opacity 180ms ease;
+}
+
+.view.is-view-leaving,
+.view.is-view-entering {
+  opacity: 0;
+}
+
+.page-shell {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.page-inner {
+  width: min(var(--content-wide), calc(100% - var(--page-pad)));
+  margin: 0 auto;
+}
+
+.mindmap-section {
+  padding: 30px 24px 55px;
+  border-bottom: 7px solid #B3B0B0;
+  background: var(--rose);
+  position: relative;
+  --page-pad:0px;
+}
+
+.mindmap-stage {
+  position: relative;
+  width: 78%;
+  height: 500px;
+  overflow: hidden;
+  margin: 0px auto;
+  border-radius: 35px;
+  background: var(--dark);
+}
+
+.mindmap-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.intro-card {
+  
+  
+  width: 51%;
+  height: 155px;
+  position: absolute;
+  left: 24px;
+  bottom: -3px;
+  /* Keep height fixed while the right side retracts. */
+  transition: width 420ms ease;
+  overflow: visible;
+}
+
+.intro-card .intro-copy {
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+/* 真正拖曳/滾動 Mind Elixir 後：右側文字由右往左收起。頭像尺寸固定。 */
+.intro-card.is-collapsed {
+  width: 180px;
+}
+
+.intro-card.is-collapsed .intro-copy {
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-contanier{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+.intro-avatar {
+  object-fit: cover;
+  width: 155px;
+  height: 155px;
+  flex: 0 0 155px;
+  border: 5px solid #B3B0B0;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  z-index: 10;
+  left: 25px;
+
+}
+
+.intro-copy {
+  line-height: 1.9;
+  white-space: pre-line;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink);
+  position: absolute;
+  left: 91px;
+  background: #B3B0B0;
+  z-index: 9;
+  height: 99%;
+  width: calc(100% - 91px);
+  padding: 6px 13px 34px 88px;
+  overflow: hidden;
+  transition: width 420ms ease, padding 420ms ease, opacity 180ms ease;
+  bottom: -12px;
+  border-radius: 0px 25px 25px 0px;
+   white-space: pre-wrap; 
+}
+
+
+
+.guide-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  /*background: var(--rose);*/
+  color: #a19b9b;
+  font-size: 1rem;
+  margin-top: 50px;
+  margin-bottom: 30px;
+
+}
+
+.guide-section p {
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.guide-line {
+  border-top: 2px dashed #c3bbbb;
+  flex: 1;
+  align-self: flex-end;
+}
+
+.view-area {
+  width: 100%;
+}
+
+.timeline-view {
+  display: flex;
+  gap: 43px;
+  justify-content: center;
+  align-items: flex-end;
+  width: 80%;
+  aspect-ratio: 760 / 350;
+  margin: 0 auto;
+  padding: 0 50px 56px;
+
+  /*background: var(--rose);*/
+}
+
+.timeline-panel {
+  display: flex;
+  
+  column-gap: 16px;
+  align-items: stretch;
+  width: 23%;
+  height: 85%;
+}
+
+.timeline-dates {
+  display: grid;
+  grid-template-rows: repeat(27, 1fr);
+  height: 100%;
+  align-items: center;
+
+  color: #9d9898;
+}
+
+.timeline-dates span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.timeline-date--hidden {
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+.timeline-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-head {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 4px;
+
+  color: #8d8888;
+}
+
+.timeline-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: #F0E7E7;
+  border: 3px solid #B3B0B0;
+}
+
+.timeline-track {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(27, 1fr);
+  overflow: visible;
+  container-type: inline-size;
+}
+
+.timeline-segment {
+  position: relative;
+  z-index: 3;
+  justify-self: start;
+  align-self: stretch;
+  width: 20px;
+  min-width: 20px;
+  min-height: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+
+  border: 0;
+  border-radius: 2px;
+  background: #b8b8b8;
+  color: #777171;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.timeline-segment::after {
+  content: attr(data-hover);
+  display: none;
+  white-space: pre-line;
+}
+
+.timeline-segment.is-active.is-hover-ready:hover,
+.timeline-segment.is-active.is-hover-ready:focus-visible {
+  z-index: 20;
+  border: none;
+}
+
+.timeline-segment.is-active.is-hover-ready:hover::after,
+.timeline-segment.is-active.is-hover-ready:focus-visible::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 21;
+  display: block;
+  width: 100cqw;
+  min-width: 100cqw;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+
+  border-radius: 2px;
+  background: #d8cece;
+  white-space: pre-line;
+}
+
+.timeline-segment.is-active {
+  background: #DBD2D2;
+  outline-offset: 1px;
+}
+
+/* 每一列 = 一個月；2026.08 在最上方，2024.06 在最下方。 */
+.timeline-segment--testing {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  margin-left: 8px;
+}
+
+.timeline-segment--admin {
+  grid-column: 2;
+  grid-row: 3 / span 4;
+  margin-right: 8px;
+}
+
+.timeline-segment--certificate {
+  grid-column: 1;
+  grid-row: 7 / span 6;
+  margin-left: 8px;
+}
+
+.timeline-segment--parttime {
+  grid-column: 2;
+  grid-row: 13 / span 4;
+  margin-right: 8px;
+}
+
+.timeline-segment--study {
+  grid-column: 1;
+  grid-row: 17 / span 7;
+  margin-left: 8px;
+}
+
+.timeline-segment--store {
+  grid-column: 2;
+  grid-row: 26 / span 1;
+  margin-right: 8px;
+}
+
+.timeline-segment--graduate {
+  grid-column: 1;
+  grid-row: 27;
+  margin-left: 8px;
+}
+
+.timeline-story {
+
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.timeline-title {
+  margin: 0 0 20px;
+
+  font-weight: 500;
+}
+
+.timeline-story-content { 
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  border: 5px solid var(--line);
+  background: #fff;
+  height: 70%;
+
+}
+
+.timeline-story-text {
+  width: 100%;
+
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.timeline-links {
+  display: flex;
+  justify-content: flex-start;
+  
+  width: fit-content;
+  padding: 0px 10px 5px 0px;
+  /*background:var(--line);
+  gap: 4px;*/
+  
+}
+
+.related-link {
+  min-width: 70px;
+  padding: 3px 9px;
+
+  border: 0;
+  font-size: .8rem;
+  cursor: pointer;
+}
+
+.related-link--practice {
+  padding: 8px 18px;
+  border-bottom: 4px solid var(--line);
+  border-right: 4px solid var(--line);
+  background: #fff;
+  font-size: 1rem;
+}
+
+.related-link--file {
+  padding: 8px 14px;
+  margin-right: 6px;
+  background: var(--line);
+  font-size: 1rem;
+}
+
+.related-link--practice:hover,
+.related-link--practice:focus-visible {
+  background: #f7f4f4;
+}
+
+.related-link--file:hover,
+.related-link--file:focus-visible,
+.related-link--file:active {
+  background: var(--line);
+}
+
+.file-view {
+
+  --page-pad:0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.file-name {
+  width: 290px;
+  padding: 6px 12px;
+
+  background: var(--rose);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+}
+
+.file-stage {
+  min-height: 430px;
+  padding: 28px 34px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--rose);
+}
+
+.file-description {
+  padding: 4px 10px ;
+  background: #d8cfcf;
+ 
+}
+
+.file-preview {
+  width: min(620px, 100%);
+  margin: 0 auto;
+}
+
+.file-preview img {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.practice-view {
+
+  --page-pad:0px;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+.practice-list {
+  flex: 0 0 16%;
+  min-width: 118px;
+  background: #fff;
+}
+
+.practice-list-title {
+  padding: 8px 5px;
+
+  color: #777;
+  font-size: .9rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.practice-list-buttons {
+  width: 100%;
+}
+
+.practice-item {
+  display: block;
+  width: 100%;
+  margin: 0 0 5px;
+  padding: 8px 5px;
+
+  border: 0;
+  border-bottom: 1px solid #b7aeae;
+  background: transparent;
+  color: #777;
+  font-size: .9rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.practice-item.is-active {
+  border-bottom-color: transparent;
+  background: #d8cfcf;
+  border-right: 10px solid white;
+}
+
+.practice-main {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 84%;
+  padding: 14px 24px 47px;
+  background: var(--rose);
+}
+
+.practice-intro {
+  min-height: 82px;
+  padding: 13px 18px 0px;
+
+  background: #d8cfcf;
+  line-height: 1.6;
+}
+
+.practice-intro p {
+  margin: 0 0 5px;
+}
+
+.practice-object {
+}
+
+.practice-files {
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  padding: 8px 15px 20px;
+}
+
+.practice-file-button {
+  min-width: 84px;
+  padding: 5px 23px;
+
+  border: 0;
+  background: #eee8e8;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.practice-file-button.is-active {
+  background: #aeadad;
+  color: #fff;
+}
+
+.practice-flow {
+  padding: 12px 20px 18px;
+
+}
+
+.practice-flow-caption {
+  margin: 0 0 10px;
+  border-bottom: 2px solid #979696;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.practice-flow-content {
+  display: grid;
+  grid-template-columns: 227px 1fr;
+  align-items: center;
+  gap: 22px;
+  
+
+}
+
+.practice-step-chain {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+  
+}
+
+.practice-step-chain::after {
+  position: absolute;
+  top: 0;
+  right: -11px;
+  bottom: 0;
+  width: 2px;
+
+  background: #979696;
+  content: "";
+}
+
+.practice-step-chain span.has-arrow::after {
+  display: block;
+
+  content: "↓";
+}
+
+.practice-checklist {
+  margin: 0;
+  padding-left: 18px;
+ 
+}
+
+.practice-checklist li {
+  padding: 8px 0;
+  white-space: pre-wrap; 
+  border-bottom: 1px solid #b7aeae;
+  line-height: 1.8rem;
+}
+
+.practice-document-panel {
+  padding: 12px 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.practice-document-description {
+  margin: 0;
+  padding: 5px 10px;
+  
+  background: #9d9d9d;
+  color: #fff;
+  font-size: .9rem;
+}
+
+.practice-document-inline-preview {
+  /*min-height: 400px;
+  max-height: 500px;*/
+  margin: 0;
+  overflow: auto;
+
+}
+
+.practice-document-inline-preview img {
+  width: 100%;
+  min-width: 620px;
+}
+
+.practice-file-view {
+  padding: 0 24px 32px;
+
+  background: #fff;
+}
+
+.practice-file-layout {
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  width: min(860px, calc(100vw - 48px));
+  min-height: 520px;
+  margin: 0 auto;
+}
+
+.practice-file-main {
+  padding: 14px 24px 26px;
+
+  background: var(--rose);
+}
+
+.practice-intro--file {
+  margin-bottom: 8px;
+}
+/*
+.practice-file-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+}
+*/
+.practice-file-actions {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.icon-button {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  place-items: center;
+
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.practice-file-description {
+  margin: 0;
+  padding: 5px 10px;
+
+  background: #9d9d9d;
+  color: #fff;
+  font-size: 9px;
+}
+
+.practice-document-preview {
+  max-height: 390px;
+  margin: 0;
+  overflow: auto;
+
+  background: #fff;
+}
+
+.practice-document-preview img {
+  width: 100%;
+  min-width: 620px;
+}
+
+.page-footer {
+  padding: 16px 24px;
+
+  background: var(--rose);
+  text-align: center;
+  --page-pad:0px;
+}
+
+.back-to-map,
+.back-to-home {
+  color: #9c9696;
+  font-size: .8rem;
+  text-decoration: none;
+}
+
+.back-to-map:hover,
+.back-to-map:focus-visible,
+.back-to-home:hover,
+.back-to-home:focus-visible {
+  text-decoration: underline;
+}
+
+.back-to-home {
+  margin-left: 18px;
+}
+
+
+/* Test Charter / pending states */
+.related-link.is-pending,
+.practice-item.is-pending,
+.practice-file-button.is-pending,
+.practice-charter-button.is-pending {
+  opacity: .48;
+  cursor: default;
+}
+
+.practice-item.is-inactive:not(.is-pending),
+.practice-item:not(.is-active):not(.is-pending) {
+  border-right: 10px solid transparent;
+  background: #fff;
+  color: #777;
+}
+
+/* Test Charter 僅在有 charter 資料的探索測試實作顯示。 */
+.practice-charter {
+  margin: 20px 20px 8px;
+}
+
+.practice-charter-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  color: #5e5959;
+  text-align: center;
+  border-bottom: 2px solid #979696;
+}
+
+.practice-charter-title::before,
+.practice-charter-title::after {
+  height: 1px;
+  flex: 1;
+  background: #979696;
+  content: "";
+}
+
+.practice-charter-body {
+  display: grid;
+  grid-template-columns: 157px minmax(0, 1fr);
+  gap: 0;
+  min-height: 150px;
+}
+
+.practice-charter-tabs {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 12px 16px 12px 0;
+  border-right: 2px solid #979696;
+}
+
+.practice-charter-button {
+  width: 100%;
+  padding: 7px 6px;
+  border: 1px solid #979696;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+.practice-charter-button.is-active {
+  background: #b8b3b3;
+  color: #4f4b4b;
+}
+
+.practice-charter-button.is-inactive {
+  background: transparent;
+}
+
+.practice-charter-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 191px;
+  gap: 16px;
+  min-height: 150px;
+  padding: 8px 0 8px 16px;
+}
+
+.practice-charter-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 10px;
+  margin: 0;
+}
+
+.practice-charter-fields div {
+  display: grid;
+  grid-template-columns: 131px minmax(0, 1fr);
+  align-items: start;
+  min-width: 0;
+}
+
+.practice-charter-fields dt {
+  margin: 0;
+  color: #5f5b5b;
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.practice-charter-fields dt::after {
+  content: "：";
+}
+
+.practice-charter-fields dd {
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #555;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.practice-charter-visual {
+  position: relative;
+  align-self: start;
+  margin: 0;
+  z-index: 3;
+}
+
+.practice-charter-visual figcaption {
+  margin: 0 0 3px;
+  color: #8d8888;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.practice-charter-visual img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  transform-origin: top right;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.practice-charter-visual:hover {
+  z-index: 20;
+}
+
+.practice-charter-visual:hover img {
+  transform: scale(1.72);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .18);
+}
+
+.practice-inline-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 8px 8px 4px;
+  margin-bottom: 14px;
+  border: 2px solid rgba(255, 255, 255, .55);
+  width: fit-content;
+  align-self: flex-end;
+  gap: 10px; 
+}
+
+.practice-document-description,
+.practice-file-description {
+  width: auto;
+  /*
+  min-width: 290px;
+  max-width: 72%;*/
+  margin-left: auto;
+  white-space: normal;
+}
+
+.practice-inline-toolbar .practice-file-actions {
+  flex: 0 0 auto;
+  padding-bottom: 0;
+}
+
+.practice-document-inline-preview iframe,
+.practice-document-preview iframe {
+  display: block;
+  width: 100%;
+  min-height: 430px;
+  border: 0;
+  background: #fff;
+  transform-origin: top right;
+  transition: transform .2s ease;
+}
+
+.practice-document-inline-preview iframe:hover,
+.practice-document-preview iframe:hover {
+  transform: scale(1.03);
+}
+
+.practice-document-pending {
+  display: grid;
+  min-height: 220px;
+  margin: 0;
+  place-items: center;
+
+  background: #fff;
+  color: #aaa;
+  font-size: .9rem;
+}
+
+@media (max-width: 760px) {
+  .practice-charter-body { grid-template-columns: 96px minmax(0, 1fr); }
+  .practice-charter-detail { grid-template-columns: 1fr; }
+  .practice-charter-visual { width: 150px; justify-self: end; }
+}
+
+
+/* v3.0.2: Test Charter 是新增內容，不取代原有實作區；Charter 檔案改為按鈕。 */
+.practice-charter-file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.practice-charter-file-button {
+  padding: 5px 9px;
+  border: 0;
+  background: #eee8e8;
+  color: #666;
+  font: inherit;
+  font-size: .95rem;
+  cursor: pointer;
+}
+
+.practice-charter-file-button:hover,
+.practice-charter-file-button:focus-visible {
+  background: #d8cfcf;
+}
+
+/* 讓探索測試尚未補齊流程資料時仍保留原本區塊位置。 */
+.practice-flow:not(.is-hidden):has(.practice-step-chain span[hidden]) .practice-flow-content {
+  min-height: 28px;
+}
+
+/* Charter 圖片可跨出欄位放大，並置於其他內容之上。 */
+.practice-charter,
+.practice-charter-body,
+.practice-charter-detail {
+  overflow: visible;
+}
+
+.practice-charter-visual {
+  z-index: 50;
+}
+.practice-charter-visual>figcaption {
+  margin-bottom: 10px;
+}
+
+.practice-charter-visual:hover {
+  z-index: 9999;
+}
+
+.practice-charter-visual:hover img {
+  position: relative;
+  z-index: 9999;
+  transform: scale(2.35);
+}
+
+/* v3.1.2 — Test Charter alignment fixes */
+/* Title uses the author's own border-bottom only; remove generated side lines. */
+.practice-charter-title::before,
+.practice-charter-title::after {
+  display: none;
+  content: none;
+}
+
+/* Test files/results are stacked vertically, matching the reference layout. */
+.practice-charter-file-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.practice-charter-file-button {
+  display: block;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* The preview sits at the right; enlarging is anchored at bottom-right so it grows left/up. */
+.practice-charter-visual {
+  z-index: 30;
+}
+
+.practice-charter-visual img {
+  transform-origin: bottom right;
+}
+
+.practice-charter-visual:hover {
+  z-index: 9999;
+}
+
+
+/* v3.1.3 — force Test Charter file results into the reference vertical stack. */
+.practice-charter-fields dd[data-charter-files] {
+  display: block;
+  width: auto;
+  white-space: normal;
+}
+.practice-charter-fields dd[data-charter-files] .practice-charter-file-list {
+  display: grid !important;
+  grid-template-columns: max-content !important;
+  grid-auto-flow: row !important;
+  justify-items: start;
+  align-items: start;
+  gap: 10px;
+  width: max-content;
+  max-width: 100%;
+}
+.practice-charter-fields dd[data-charter-files] .practice-charter-file-button {
+  display: block !important;
+  width: max-content !important;
+  max-width: 100%;
+  margin: 0;
+  flex: none !important;
+  white-space: nowrap;
+}
+
+/* v3.1.4: embedded document scrolling + timeline hover readability */
+/* Let the embedded PDF/HTML viewer own its scrolling. This avoids a second
+   scrollbar around the iframe and prevents a bottom scrollbar in the host. */
+.practice-document-inline-preview,
+.practice-document-preview {
+  overflow: hidden;
+}
+
+.practice-document-inline-preview iframe,
+.practice-document-preview iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Timeline hover card: cover the timeline bars and give text enough room. */
+.timeline-segment.is-active.is-hover-ready:hover,
+.timeline-segment.is-active.is-hover-ready:focus-visible {
+  z-index: 100;
+}
+
+.timeline-segment.is-active.is-hover-ready:hover::after,
+.timeline-segment.is-active.is-hover-ready:focus-visible::after {
+  left: -22px;
+  z-index: 101;
+  width: clamp(250px, 24vw, 340px);
+  min-width: 250px;
+  max-width: 340px;
+  min-height: 100%;
+  padding: 12px 16px;
+  line-height: 1.55;
+  box-shadow: 0 0 0 1px rgba(179, 176, 176, .35);
+}
+
+/* Events drawn on the right side should expand back toward the left so the
+   hover card remains over the timeline instead of spilling away from it. */
+.timeline-segment--admin.is-active.is-hover-ready:hover::after,
+.timeline-segment--admin.is-active.is-hover-ready:focus-visible::after,
+.timeline-segment--parttime.is-active.is-hover-ready:hover::after,
+.timeline-segment--parttime.is-active.is-hover-ready:focus-visible::after,
+.timeline-segment--store.is-active.is-hover-ready:hover::after,
+.timeline-segment--store.is-active.is-hover-ready:focus-visible::after {
+  left: auto;
+  right: -22px;
+}
+
+/* v3.1.5 — HTML table preview keeps its horizontal scrollbar visible at the
+   bottom of the preview viewport. PDF viewers are unaffected. */
+
+/* Timeline hover card follows the amount of text instead of reserving a
+   fixed 250–340px box. */
+.timeline-segment.is-active.is-hover-ready:hover::after,
+.timeline-segment.is-active.is-hover-ready:focus-visible::after {
+  width: max-content;
+  min-width: 0;
+  max-width: 340px;
+  min-height: 0;
+  height: auto;
+  white-space: normal;
+  padding: 10px 14px;
+}
+
+
+/* v3.1.6 — file metadata + timeline hover cleanup */
+.file-description[hidden] {
+  display: none !important;
+}
+
+/* Keep the hover card sized to its text, but hide the original time block
+   underneath it so no pieces of the block remain visible above/below. */
+.timeline-segment.is-active.is-hover-ready:hover,
+.timeline-segment.is-active.is-hover-ready:focus-visible {
+  background: transparent;
+  z-index: 200;
+}
+
+.timeline-segment.is-active.is-hover-ready:hover::after,
+.timeline-segment.is-active.is-hover-ready:focus-visible::after {
+  z-index: 201;
+}
+
+/* v3.1.7 — Test Charter 實作檔案展示 */
+.practice-charter-file-preview {
+  margin-top: 18px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.practice-charter-file-preview .practice-document-inline-preview {
+  min-height: 220px;
+  background: #fff;
+}
+.practice-charter-file-preview iframe {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  border: 0;
+}
+.file-preview iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  min-height: 0;
+  border: 0;
+}
+
+
+/* v3.1.8 — Preserve line breaks authored in Test Charter file info. */
+[data-charter-file-description] {
+  white-space: pre-line;
+}
+
+/* Mind Elixir 官方掛載容器：直接使用 #map，不再以 class 或 SVG fallback 代替。 */
+#map {
+  height: 500px;
+  width: 100%;
+  background: var(--dark);
+}
+
+/* 可跳轉節點提供輕量提示；資料佔位替換節點不加此 class。 */
+#map .portfolio-map-link {
+  cursor: pointer;
+}
+
+#map .portfolio-map-link {
+  transition: filter 160ms ease, text-shadow 160ms ease, box-shadow 160ms ease;
+}
+
+#map .portfolio-map-link:hover {
+  filter: brightness(1.28);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 2px rgba(120, 154, 250, 0.72);
+}
+
+/* Timeline hover text keeps the explicit line breaks stored in data.js. */
+.timeline-hover-card,
+.timeline-hover,
+[data-timeline-hover] {
+  white-space: pre-line;
+}
+
+/* Preserve explicit \n line breaks in Timeline hover data. */
+.timeline-segment.is-active.is-hover-ready:hover::after,
+.timeline-segment.is-active.is-hover-ready:focus-visible::after {
+  white-space: pre-line;
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>個人網頁｜V2 Desktop</title>
+  <meta name="description" content="個人網頁與軟體測試作品展示">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <main class="page-shell ">
+    <section class="mindmap-section page-inner" id="mindmap" aria-label="心智圖區塊">
+      <div class="mindmap-stage">
+        <div id="map" aria-label="互動式個人網站心智圖"></div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-contanier">
+          <img class="intro-avatar" src="assets/images/avatar-reference.png" alt="個人頭像插畫">
+          <p class="intro-copy" data-static-text="intro.copy"></p>
+        </div>
+        
+      </div>
+      <span class="intro-rule" aria-hidden="true"></span>
+    </section>
+
+    <section class="guide-section page-inner" aria-label="操作引導線">
+      <span class="guide-line" aria-hidden="true"></span>
+      <p data-guide-text></p>
+      <span class="guide-line" aria-hidden="true"></span>
+    </section>
+
+    <section class="view-area page-inner" id="view-area" aria-live="polite">
+      <section class="view timeline-view page-inner" data-view="timeline" aria-label="時間線區塊">
+          <aside class="timeline-panel" aria-label="時間圖表">
+            <div class="timeline-dates" aria-hidden="true">
+              <span data-timeline-month="2026.08"></span>
+              <span data-timeline-month="2026.07"></span>
+              <span data-timeline-month="2026.06"></span>
+              <span data-timeline-month="2026.05"></span>
+              <span data-timeline-month="2026.04"></span>
+              <span data-timeline-month="2026.03"></span>
+              <span data-timeline-month="2026.02"></span>
+              <span data-timeline-month="2026.01"></span>
+              <span data-timeline-month="2025.12"></span>
+              <span data-timeline-month="2025.11"></span>
+              <span data-timeline-month="2025.10"></span>
+              <span data-timeline-month="2025.09"></span>
+              <span data-timeline-month="2025.08"></span>
+              <span data-timeline-month="2025.07"></span>
+              <span data-timeline-month="2025.06"></span>
+              <span data-timeline-month="2025.05"></span>
+              <span data-timeline-month="2025.04"></span>
+              <span data-timeline-month="2025.03"></span>
+              <span data-timeline-month="2025.02"></span>
+              <span data-timeline-month="2025.01"></span>
+              <span data-timeline-month="2024.12"></span>
+              <span data-timeline-month="2024.11"></span>
+              <span data-timeline-month="2024.10"></span>
+              <span data-timeline-month="2024.09"></span>
+              <span data-timeline-month="2024.08"></span>
+              <span data-timeline-month="2024.07"></span>
+              <span data-timeline-month="2024.06"></span>
+            </div>
+
+            <div class="timeline-body">
+              <div class="timeline-head">
+                <span data-static-text="timeline.learning"></span>
+                <span data-static-text="timeline.work"></span>
+              </div>
+
+              <div class="timeline-bg" aria-hidden="true"></div>
+
+              <div class="timeline-track">
+                <button class="timeline-segment timeline-segment--testing" type="button" data-timeline-id="testing-2026-08"></button>
+                <button class="timeline-segment timeline-segment--admin" type="button" data-timeline-id="admin-2026-06"></button>
+                <button class="timeline-segment timeline-segment--certificate" type="button" data-timeline-id="certificate-2026-02"></button>
+                <button class="timeline-segment timeline-segment--parttime" type="button" data-timeline-id="parttime-2025-10"></button>
+                <button class="timeline-segment timeline-segment--study" type="button" data-timeline-id="study-2025-04"></button>
+                <button class="timeline-segment timeline-segment--store" type="button" data-timeline-id="coding-2024-08"></button>
+                <button class="timeline-segment timeline-segment--graduate" type="button" data-timeline-id="graduate-2024-06"></button>
+              </div>
+            </div>
+          </aside>
+
+          <article class="timeline-story">
+            <h3 class="timeline-title" data-timeline-title></h3>
+            <div class="timeline-story-content">
+              <div class="timeline-story-text" data-timeline-story></div>
+            </div>
+            <div class="timeline-links" data-related-links aria-label="相關連結展示區"></div>
+          </article>
+      </section>
+
+      <section class="view file-view page-inner is-hidden" data-view="file" aria-label="檔案展示區塊">
+        <h2 class="file-name" data-file-name data-close-file role="button" tabindex="0"></h2>
+        <div class="file-stage page-inner">
+          <p class="file-description" data-file-description></p>
+          <figure class="file-preview">
+            <img data-file-preview src="assets/images/excel-certificate.png" alt="檔案預覽">
+            <iframe class="is-hidden" data-file-preview-frame title="檔案預覽" loading="lazy"></iframe>
+          </figure>
+        </div>
+      </section>
+
+      <section class="view practice-view page-inner is-hidden" data-view="practice" aria-label="實作展示區塊">
+        <aside class="practice-list" aria-label="實作項目按鈕區塊" data-practice-list></aside>
+
+          <div class="practice-main">
+            <article class="practice-intro" aria-label="實作介紹區塊">
+              <p data-practice-intro></p>
+              <p class="practice-object"><span data-static-text="practice.objectLabel"></span><strong data-practice-object></strong></p>
+            </article>
+
+            <div class="practice-files" aria-label="實作檔案按鈕區塊" data-practice-files></div>
+
+            <section class="practice-flow" aria-label="實作進行區塊">
+              <p class="practice-flow-caption" data-static-text="practice.flowCaption"></p>
+              <div class="practice-flow-content">
+                <div class="practice-step-chain">
+                  <span data-flow-step="0"></span>
+                  <span data-flow-step="1"></span>
+                  <span data-flow-step="2"></span>
+                  <span data-flow-step="3"></span>
+                  <span data-flow-step="4"></span>
+                </div>
+                <ol class="practice-checklist" data-practice-review></ol>
+              </div>
+            </section>
+
+            <section class="practice-charter is-hidden" data-practice-charter aria-label="Test Charter 區域">
+              <p class="practice-charter-title">Test Charter</p>
+              <div class="practice-charter-body">
+                <div class="practice-charter-tabs" data-charter-tabs></div>
+                <div class="practice-charter-detail">
+                  <dl class="practice-charter-fields">
+                    <div><dt>測試範圍</dt><dd data-charter-scope>—</dd></div>
+                    <div><dt>測試重點</dt><dd data-charter-focus>—</dd></div>
+                    <div><dt>測試檔案和結果</dt><dd data-charter-files>—</dd></div>
+                  </dl>
+                  <figure class="practice-charter-visual is-hidden" data-charter-visual-wrap>
+                    <figcaption>懸停圖片可放大查看</figcaption>
+                    <img data-charter-visual alt="Test Charter 測試畫面">
+                  </figure>
+                </div>
+              </div>
+              <section class="practice-charter-file-preview is-hidden" data-charter-file-preview aria-label="Test Charter 實作檔案展示">
+                <div class="practice-file-toolbar practice-inline-toolbar">
+                  <p class="practice-document-description" data-charter-file-description></p>
+                  <div class="practice-file-actions">
+                    <button type="button" class="icon-button is-hidden" data-charter-file-open aria-label="在新分頁開啟檔案">↗</button>
+                    <button type="button" class="icon-button is-hidden" data-charter-file-download aria-label="下載檔案">↓</button>
+                  </div>
+                </div>
+                <div class="practice-document-inline-preview">
+                  <iframe class="is-hidden" data-charter-file-frame title="Test Charter 實作檔案預覽" loading="lazy"></iframe>
+                  <p class="practice-document-pending" data-charter-file-empty>當前無檔案可以展示</p>
+                </div>
+              </section>
+            </section>
+
+            <section class="practice-document-panel is-hidden" data-practice-document-panel aria-label="實作檔案內容區塊">
+              <div class="practice-file-toolbar practice-inline-toolbar">
+                <p class="practice-document-description" data-practice-inline-description></p>
+                <div class="practice-file-actions">
+                  <button type="button" class="icon-button" data-inline-open-file aria-label="在新分頁開啟檔案">↗</button>
+                  <button type="button" class="icon-button" data-inline-download-file aria-label="下載檔案">↓</button>
+                </div>
+              </div>
+              <div class="practice-document-inline-preview">
+                <iframe data-practice-inline-preview title="實作檔案預覽" loading="lazy"></iframe>
+                <p class="practice-document-pending is-hidden" data-practice-inline-pending>檔案已規劃，內容尚未整理。</p>
+              </div>
+            </section>
+          </div>
+      </section>
+
+      <section class="view practice-file-view is-hidden" data-view="practice-file" aria-label="實作檔案展示區塊">
+        <div class="practice-file-layout">
+          <aside class="practice-list" aria-label="實作項目按鈕區塊" data-practice-file-list></aside>
+
+          <div class="practice-file-main">
+            <article class="practice-intro practice-intro--file">
+              <p data-practice-file-intro></p>
+              <p class="practice-object"><span data-static-text="practice.objectLabel"></span><strong data-practice-file-object></strong></p>
+            </article>
+
+            <div class="practice-file-toolbar">
+              <div class="practice-files" data-practice-file-tabs></div>
+              <div class="practice-file-actions">
+                <button type="button" class="icon-button" data-open-file aria-label="在新分頁開啟檔案">↗</button>
+                <button type="button" class="icon-button" data-download-file aria-label="下載檔案">↓</button>
+              </div>
+            </div>
+
+            <p class="practice-file-description" data-practice-document-description></p>
+
+            <div class="practice-document-preview">
+              <iframe data-practice-document-preview title="實作檔案預覽" loading="lazy"></iframe>
+              <p class="practice-document-pending is-hidden" data-practice-document-pending>檔案已規劃，內容尚未整理。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="page-footer page-inner">
+      <a class="back-to-map" href="#mindmap" data-static-text="footer.backToMap"></a>
+      <a class="back-to-home" href="#" data-home-link data-static-text="footer.backToHome"></a>
+    </footer>
+  </main>
+</body>
+</html>

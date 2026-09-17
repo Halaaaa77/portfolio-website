@@ -1,0 +1,328 @@
+{
+  "nodeData": {
+    "id": "06a6dfebb32e045e",
+    "topic": "個人網站",
+    "children": [
+      {
+        "topic": "時間線",
+        "id": "06a70b7530bc9cef",
+        "children": [
+          {
+            "topic": "2026.7~2026.8",
+            "id": "06a71ed4f7aef917",
+            "children": [
+              {
+                "topic": "{testing-2026-08.hover}",
+                "id": "0a490bf4927b08e8",
+                "children": []
+              },
+              {
+                "topic": "{testing-2026-08.story",
+                "id": "0a4913c2778eb246",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2026.3~2026.7",
+            "id": "06a720990c5fe280",
+            "children": [
+              {
+                "topic": "{admin-2026-06.story",
+                "id": "0a491817e1c545ab",
+                "children": []
+              },
+              {
+                "topic": "{admin-2026-06.hover}",
+                "id": "0a4918e7b5959c57",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2025.10~2026.3",
+            "id": "06a7383491cc0603",
+            "children": [
+              {
+                "topic": "{certificate-2026-02.story",
+                "id": "0a491ce9cd53abfc",
+                "children": []
+              },
+              {
+                "topic": "{certificate-2026-02.hover}",
+                "id": "0a491a302a31477f",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2025.6~2025.9",
+            "id": "06a7ad993da107fd",
+            "children": [
+              {
+                "topic": "{parttime-2025-10.story",
+                "id": "0a491d81be771ce4",
+                "children": []
+              },
+              {
+                "topic": "{parttime-2025-10.hover}",
+                "id": "0a491abce8fdd1e3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2024.9~2025.3",
+            "id": "0a47b5ff5d2da54d",
+            "children": [
+              {
+                "topic": "{study-2025-04.story",
+                "id": "0a491e271f6becf2",
+                "children": []
+              },
+              {
+                "topic": "{study-2025-04.hover}",
+                "id": "0a491b221e734098",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2024.7~2024.8",
+            "id": "0a47bae02b4fadbe",
+            "children": [
+              {
+                "topic": "{store-2024-07.story",
+                "id": "0a491eb533076f7d",
+                "children": []
+              },
+              {
+                "topic": "{store-2024-07.hover}",
+                "id": "0a491ba6e864d2f0",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "2024.6",
+            "id": "0a47c2ee45bebfb7",
+            "children": [
+              {
+                "topic": "{graduate-2024-06.hover}",
+                "id": "0a491c10ae08069d"
+              },
+              {
+                "topic": "{graduate-2024-06.story",
+                "id": "0a491f2e9c620f4d"
+              }
+            ]
+          }
+        ],
+        "direction": 0
+      },
+      {
+        "topic": "檔案展示",
+        "id": "06a7102650d00993",
+        "children": [
+          {
+            "topic": "MOS EXCEL EXPERT：{files.excel.preview}",
+            "id": "06a731b723e130d6",
+            "children": [],
+            "expanded": true
+          },
+          {
+            "topic": "TQC WORD 專業級：files.tqc.preview",
+            "id": "0a47c79355594bc9",
+            "children": []
+          }
+        ],
+        "direction": 0
+      },
+      {
+        "topic": "實作",
+        "id": "06a7c2d215c6a23a",
+        "direction": 1,
+        "children": [
+          {
+            "topic": "驗收測試",
+            "id": "06a7c8fe80e063bd",
+            "children": [
+              {
+                "topic": "測試目的：{practices.acceptance.intro}",
+                "id": "06a7d382d7a18d06",
+                "children": []
+              },
+              {
+                "topic": "測試對象：{practices.acceptance.object}",
+                "id": "0a476dd516a6b1bb",
+                "children": []
+              },
+              {
+                "topic": "檔案查看",
+                "id": "0a4774f241f78ea2",
+                "children": [
+                  {
+                    "topic": "需求規格：{documents[0].url}",
+                    "id": "0a485f8ff47c1a51",
+                    "children": []
+                  },
+                  {
+                    "topic": "測試案例：{documents[1].url}",
+                    "id": "0a4860ed53415f6f",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "topic": "所處經歷：{Timeline/testing-2026-08}",
+                "id": "0a47d18cb72f0d77",
+                "children": []
+              }
+            ]
+          },
+          {
+            "topic": "探索測試",
+            "id": "06a7ca1837cd8870",
+            "children": [
+              {
+                "topic": "測試目的：{practices.exploratory.intro}",
+                "id": "0a4784bc3934b169",
+                "children": []
+              },
+              {
+                "topic": "測試對象：{practices.exploratory.object}",
+                "id": "0a4785843083a316",
+                "children": []
+              },
+              {
+                "topic": "檔案查看",
+                "id": "0a478648425c094e",
+                "children": [
+                  {
+                    "topic": "心智圖：{exploratory-mindmap}",
+                    "id": "0a48f75f81278cbd",
+                    "children": []
+                  },
+                  {
+                    "topic": "Test Charter",
+                    "id": "0a4881aa2e5ae200",
+                    "children": [
+                      {
+                        "topic": "登入表單",
+                        "id": "0a4894b4243065d1",
+                        "children": [
+                          {
+                            "topic": "Test_login_first.py ..    [100%]",
+                            "id": "0a4887416b041049",
+                            "children": [
+                              {
+                                "topic": "說明：{.charter[0].file[0].info}",
+                                "id": "0a48c6bd7a14e434",
+                                "children": []
+                              },
+                              {
+                                "topic": "檔案：{none}",
+                                "id": "0a48cad3703e585b"
+                              }
+                            ]
+                          },
+                          {
+                            "topic": "Test_login_form.py ....F..FF    [100%]",
+                            "id": "0a488eea6c4f2476",
+                            "children": [
+                              {
+                                "topic": "說明：{.charter[0].file[1].info}",
+                                "id": "0a48ce7a31080a7a"
+                              },
+                              {
+                                "topic": "檔案：{.charter[0].file[1].url}",
+                                "id": "0a48ce7aa4b89de0"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "忘記密碼表單",
+                        "id": "0a4897c66466490e",
+                        "children": [
+                          {
+                            "topic": "Test_login_form.py ....F..FF    [100%]",
+                            "id": "0a489960e7031970",
+                            "children": [
+                              {
+                                "topic": "說明：{.charter[1].file[0].info}",
+                                "id": "0a48cdb69de9a1dc"
+                              },
+                              {
+                                "topic": "檔案：{.charter[1].file[0].url}",
+                                "id": "0a48cdb6287370d8",
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "所處經歷：{Timeline/testing-2026-08}",
+                "id": "0a4901e1ac8ff77e",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 2,
+  "theme": {
+    "name": "Dark",
+    "type": "dark",
+    "palette": [
+      "#848FA0",
+      "#748BE9",
+      "#D2F9FE",
+      "#4145A5",
+      "#789AFA",
+      "#706CF4",
+      "#EF987F",
+      "#775DD5",
+      "#FCEECF",
+      "#DA7FBC"
+    ],
+    "cssVar": {
+      "--node-gap-x": "30px",
+      "--node-gap-y": "10px",
+      "--main-gap-x": "65px",
+      "--main-gap-y": "45px",
+      "--root-radius": "30px",
+      "--main-radius": "20px",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#2d3748",
+      "--root-border-color": "rgba(255, 255, 255, 0.1)",
+      "--main-border": "",
+      "--main-color": "#ffffff",
+      "--main-bgcolor": "#4c4f69",
+      "--main-bgcolor-transparent": "rgba(76, 79, 105, 0.8)",
+      "--topic-padding": "3px",
+      "--color": "#cccccc",
+      "--bgcolor": "#252526",
+      "--selected": "#4dc4ff",
+      "--accent-color": "#789AFA",
+      "--panel-color": "#ffffff",
+      "--panel-bgcolor": "#2d3748",
+      "--panel-border-color": "#696969",
+      "--map-padding": "50px 80px"
+    }
+  },
+  "compact": false,
+  "meta": {
+    "branchStyle": "default"
+  }
+}
